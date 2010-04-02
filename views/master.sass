@@ -1,307 +1,480 @@
-!primary = #2f5086
-!secondary = #333
-!body = !secondary + #444
-!pre_background = !primary + #b3986c
-!pre_color = !pre_background - 140
-!pre_border = !pre_background - 24
-
-!border_type = "solid" #ccc
-!border = 1px !border_type
-
-!sans_serif = "Helvetica Neue, Arial, Helvetica, sans-serif"
-!fixed = "Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, monospace"
-
-// Typopgraphy
-
-h1, h2, h3, h4, h5, h6, p, div.breadcrumb
-  :color #333
-  :font-family = !sans_serif
-
-h1, h2, h3, h4, h5, h6
-  :color = !secondary
-  a:hover
-    :text-decoration none
-
-h1, h2, h3, h4, h5, h6
-  :margin 0.5em 0
-
-h1
-  :font-size 18%
-
-h2
-  :font-size 150%
-
-h3
-  :font-size 150%
-
-h4
-  :font-size 110%
-
-ol, ol li, p, pre, ul, ul li
-  :margin-bottom 1em
-
-ol li, ul li
-  :margin-bottom 0.75em
-
-ol, p, ul
-  :font-family = !sans_serif
-  :font-size 90%
-  :line-height 140%
-  :color = !body - #111
-
-ul, ol
-  :padding-left 2.5em
-
-strong
-  :font-weight bold
-  :color = !secondary
-
-em
-  :font-style italic
-
-a
-  :color = !primary
-  &:hover
-    :color = !primary + #112
-  &:visited
-    :color = !primary - #111
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
+  font-weight: inherit
+  font-style: inherit
+  font-size: 100%
+  font-family: inherit
+  vertical-align: baseline
 
 
-// Layout and page content
+*:focus
+  outline: 0
+
 
 body
-  :background white url(/images/body-bg.png) repeat-x
+  line-height: 1
+  color: black
+  background: white
 
-#container
-  :margin 0 1em 2em 1em
-  :min-width 54em
 
-#wrapper
-  :width 52em
-  :position relative
-  :left 50%
-  :margin-left -26em
+ul
+  list-style: none
 
-#header
-  :margin-bottom 2.3em
 
-  #logo
-    :margin 0
-    :padding-top 0.79em
+table
+  border-collapse: separate
+  border-spacing: 0
 
-    :color = !primary
 
-    :font-size 285%
-    :line-height 100%
-    :font-weight bold
-    
-    a
-      :text-decoration none
-      :text-shadow rgb(168, 179, 194) 0px 1px 2px, rgba(255, 255, 255, 0.8) 0 -1px 1px, rgba(47, 80, 134, 0.2) 0 0.25em 15px
+caption, th, td
+  text-align: left
+  font-weight: normal
 
-      &:hover
-        :color = !primary + #112
-      &:visited
-        :color = !primary
-      span
-        :margin-left 0.2em
-        
-        :font-size 65%
-        :font-weight normal
 
-    small
-      :position absolute
-      :width 12em
-      :top 2em
-      :right 0
+blockquote
+  &:before, &:after
+    content: ""
 
-      :color = !body
-      :font-size 35%
-      :line-height 120%
-      :font-weight normal
-      :letter-spacing 0
 
-#content
-  :float left
-  :width 37.5em
-  :padding-top 1.5em
+q
+  &:before, &:after
+    content: ""
 
-#sidebar
-  :width 12em
-  :float right
-  
-  :padding-top 1.5em
 
-  h2
-    :margin 0 0 1em 0
-    :font-size 110%
+blockquote, q
+  quotes: "" ""
 
-  ol, ul
-    :margin 1em 0
-    :padding 0
 
-    :list-style none
+body
+  color: #191919
+  font: normal 0.875em/1.4 Palatino, Georgia, "Times New Roman", serif
+  line-height: 1.4
 
-    :font-size 85%
-    
-    li
-      :margin 0.6em 0
 
-  div.feed
-    :margin 1.5em 0
-    :border-top = !border
-    :border-bottom = !border
+h1, h2, h3, h4, h5, .post.quote blockquote, .permalink p, .source, #footer
+  font-family: "GillSans", "Gill Sans", Helvetica
+  letter-spacing: 0.14em
+  margin: 0 15px 0.8em
+  text-align: center
+  text-shadow: rgba(0,0,0,0.01) 0 0 1px
+  text-transform: uppercase
 
-div.feed
-  :color = !body
-  :font-family = !sans_serif
-  :font-size 90%
 
-div.feed
-  :margin 0.5em 0
-  :padding-top 1.5em
-  :padding-bottom 1.5em
+h2
+  font-size: 1.28em
+  line-height: 1.33
+  padding: 0
 
   a
-    :padding 6px 0 6px 36px
-    :background url(/feed-icon.png) no-repeat left center
+    color: #242424
+    text-decoration: none
 
-#content
-  div.breadcrumb
-    :margin-bottom 1.1em
+    &:hover
+      color: #c55e31
 
-    :font-size 80%
-    :font-family = !sans_serif
-    :line-height 120%
-    
-    :color = !body
 
-  div.date
-    :margin-top 2.75em
-    :margin-bottom -0.5em
+p
+  padding: 0.5em 0 0.5em
 
-    :font-family = !sans_serif
-    :font-size 75%
 
-    :color = !body
+.hr
+  border-bottom: 1px #9d9f9a solid
+  margin: 0 auto 1em
+  width: 140px
 
-  h2
-    :clear both
-    :margin 1em 0 0.5em 0
-    &.articles
-      :margin-bottom 1em
-      :border-bottom = !border
-      :padding-bottom 0.75em
+  hr
+    display: none
 
-  div.summary
-    :margin-bottom 1.4em
-    :border-bottom = !border
-    :padding-bottom 0.7em
-    
-    &:last-child
-      :border-bottom none
-      :padding-bottom 0
-    
-    h2,
-    h3
-      :margin-top 0
-      a
-        :text-decoration none
-        &:hover
-          :text-decoration underline
-    
-    p.read_more
-      :font-family = !sans_serif
-      :font-size 90%
 
-  img
-    :margin 0.75em 0 1.5em 0
-    :border 1px solid #ccc
-    :padding 2px
+#header
+  background: #92300d url(http://data.tumblr.com/Ko3LqKPvh62htiqhpwkcr0nD_400.jpg)
 
-  ol,
-  ul
-    :padding-left 0
-    :list-style-position outside
-    li
-      :margin-left -0.3em
-      :padding-left 0.3em
-  
-  ol
-    :list-style-type decimal
-  ul
-    :list-style-type disc
-  
-  img.flow
-    :float left
-    :margin 0 1em 1em 0
-    &.alternate
-      :float right
-      :margin 0 0 1em 1em
-
-  blockquote
-    :margin 1.5em 0
-    :padding 0.75em
-
-    :background = #eee
-
-    p
-      :margin 0
-
-    cite
-      :display block
-
-      :text-align right
-
-  div.categories,
-  p.social
-    :margin 1.5em 0
-    :font-family = !sans_serif
-    :font-size 85%
-    :font-weight bold
-    
-    :color = !secondary
+  h1
+    background: #bc3d0e url(http://data.tumblr.com/Ko3LqKPvh62hu3ae5iP11zPJ_400.jpg)
+    margin: 0 auto
+    width: 540px
 
     a
-      :margin-left 0.4em
-  
-  p.social
-    :padding-top 20px
-    :border-top = 4px !border_type
-    img
-      :margin 0
-      :border none
-      :padding 0
-      :vertical-align middle
+      background: url(http://data.tumblr.com/Ko3LqKPvh62i5i2qOYRFt79Z_400.gif) no-repeat center 20px
+      color: #111
+      display: block
+      height: 200px
+      text-decoration: none
 
-  code, pre
-    :color = !pre_color
-    :font-family = !fixed
+      &:hover
+        color: #666
 
-  pre
-    :margin 1.5em 0
-    :border-left = 3px "solid" !pre_border
-    :padding 1em
+      span
+        display: table-cell
+        height: 200px
+        padding-left: 170px
+        vertical-align: middle
+        width: 200px
 
-    :font-size 90%
-    :line-height 135%
-    :background-color = !pre_background
+      em
+        display: block
+        font-size: 0.8em
+        font-style: normal
 
-    :overflow auto
-
-    code
-      :border none
-      :padding 0
 
 #footer
-  :clear both
+  background: #92300d url(http://data.tumblr.com/Ko3LqKPvh62htiqhpwkcr0nD_400.jpg)
+  margin: 0
 
-  :margin-top 2em
-  :border-top = !border
-  :padding-top 0.5em
+  .wrapper
+    background: #bc3d0e url(http://data.tumblr.com/Ko3LqKPvh62hu3ae5iP11zPJ_400.jpg)
+    margin: 0 auto 0
+    overflow: hidden
+    padding: 10px 0 20px
+    width: 540px
+    zoom: 1
+
+  ul li
+    float: left
+    padding-top: 2.6em
+    width: 180px
+
+    &.page
+      font-size: 4.4em
+      padding-top: 0
+      width: 180px
+
+    &.newer
+      text-align: left
+
+    &.older
+      text-align: right
 
   p
-    :font-family = !sans_serif
-    :font-size 70%
+    clear: both
+    text-align: center
+    font-size: 11px
 
-    :color = !body
+  a
+    color: #222
+    text-decoration: none
+
+    &:hover
+      color: #fff
+      text-shadow: #555 0 1px 1px
+
+
+.post
+  background: #d4d4cb url(http://data.tumblr.com/Ko3LqKPvh62hchwniINBY4Mr_400.jpg) top repeat-x
+  border-top: 6px #c45d30 solid
+
+  .wrapper
+    background: #ecece2 url(http://data.tumblr.com/Ko3LqKPvh62h949njLOFkUmx_400.jpg) top repeat-x
+    margin: 0 auto
+    padding: 1.2em 15px
+    width: 510px
+
+  &.photo .wrapper
+    text-align: center
+
+    .description
+      text-align: left
+
+  .permalink
+    background: #92300d url(http://data.tumblr.com/Ko3LqKPvh62htiqhpwkcr0nD_400.jpg)
+
+    .wrapper
+      background: #bc3d0e url(http://data.tumblr.com/Ko3LqKPvh62hu3ae5iP11zPJ_400.jpg)
+      padding: 0 15px
+
+    p
+      font-size: 0.7em
+      margin: 0
+      overflow: hidden
+      text-align: right
+      padding: 1em 0
+
+      a
+        border: 0
+        background: transparent url(http://data.tumblr.com/Ko3LqKPvh62hulg5tG3lp8Gn_400.gif) center center no-repeat
+        color: #222 !important
+        display: block
+        text-decoration: none
+        overflow: hidden
+        zoom: 1
+
+        &:hover
+          color: #fff !important
+          text-shadow: #555 0 1px 1px
+
+        span
+          display: block
+          float: left
+          padding: 20px 35px 20px 0
+          width: 220px
+
+        .right
+          padding: 20px 0 20px 35px
+          text-align: left
+
+    .wrapper
+      padding-bottom: 0
+
+  img, object, embed
+    border: 1px #d0cdce solid
+    padding: 4px
+
+  a:hover img
+    background: #fff
+    border-color: #398c81
+
+  .description
+    margin-right: 5px
+    margin-left: 5px
+    margin-top: 10px
+
+
+.poss .description p:first-child
+  margin-top: 0
+
+
+.post
+  p a, li a, .description a
+    border-bottom: 1px #c8c8ad solid
+    color: #bc3d0e
+    text-decoration: none
+
+  p a:hover, li a:hover, .description a:hover
+    color: #000 !important
+
+  blockquote
+    border-left: 1px #9d9f9a dotted
+    margin: 0 15px 0.5em
+    padding: 0 0 0 10px
+
+    p
+      margin-top: 0.5em
+      margin-bottom: 0.5em
+      padding: 0
+
+  ul
+    list-style: disc
+    margin-right: 16px
+    margin-left: 16px
+
+  ol
+    margin-right: 16px
+    margin-left: 20px
+
+  &.quote
+    border-color: #005a9e
+
+    blockquote
+      border: 0
+      font-size: 2em
+      line-height: 1.2
+      padding: 0
+
+      &.short
+        font-size: 2em
+
+      &.medium
+        font-size: 1.7em
+
+      &.long
+        font-size: 1.4em
+
+      p
+        padding-bottom: 0
+
+    p a, li a, .source a
+      color: #005a9e
+
+    .permalink
+      background: #004e88 url(http://data.tumblr.com/Ko3LqKPvh62hlvs9KsQDtzzJ_400.jpg)
+
+      .wrapper
+        background-color: #005a9e
+        background-image: url(http://data.tumblr.com/Ko3LqKPvh62hmphqOP3xNYxi_400.jpg)
+
+      p a
+        background: transparent url(http://data.tumblr.com/Ko3LqKPvh62hn6uzhbFXZLu7_400.gif) center center no-repeat
+
+  &.photo
+    border-color: #036f5d
+
+    h2 a:hover, p a, li a, .description a
+      color: #036f5d
+
+    .permalink
+      background: #005547 url(http://data.tumblr.com/Ko3LqKPvh62hozzgZu9OVB5j_400.jpg)
+
+      .wrapper
+        background-color: #036f5d
+        background-image: url(http://data.tumblr.com/Ko3LqKPvh62hpkzqaIByngUi_400.jpg)
+
+      p a
+        background: transparent url(http://data.tumblr.com/Ko3LqKPvh62hqisd46QYxPRu_400.gif) center center no-repeat
+
+  &.video
+    border-color: #cd2855
+
+    h2 a:hover, p a, li a, .description a
+      color: #cd2855
+
+    .permalink
+      background: #b4224a url(http://data.tumblr.com/Ko3LqKPvh62hymxq3h90yNvS_400.jpg)
+
+      .wrapper
+        background-image: url(http://data.tumblr.com/Ko3LqKPvh62hywr73KpITjCN_100.jpg)
+        background-color: #cd2855
+
+      p a
+        background: transparent url(http://data.tumblr.com/Ko3LqKPvh62hz7l0QGX4nVJh_400.gif) center center no-repeat
+
+  &.link
+    border-color: #a40e12
+
+    h2 a:hover, p a, li a, .description a
+      color: #a40e12
+
+    .permalink
+      background: #901112 url(http://data.tumblr.com/Ko3LqKPvh62i1ktcslo7BC3J_400.jpg)
+
+      .wrapper
+        background-image: url(http://data.tumblr.com/Ko3LqKPvh62i24cuciwG7RIl_400.jpg)
+        background-color: #a40e12
+
+      p a
+        background: transparent url(http://data.tumblr.com/Ko3LqKPvh62i2dpge70m1Owu_400.gif) center center no-repeat
+
+  &.conversation
+    border-color: #d5be16
+
+    h2 a:hover, p a, li a, .description a
+      color: #d5be16
+
+    .permalink
+      background: #bca913 url(http://data.tumblr.com/Ko3LqKPvh62i4n4kTaPc0Dgo_400.jpg)
+
+      .wrapper
+        background-image: url(http://data.tumblr.com/Ko3LqKPvh62i4x45D3dfVgKJ_400.jpg)
+        background-color: #d5be16
+
+      p a
+        background: transparent url(http://data.tumblr.com/Ko3LqKPvh62i57ifYm8FS3Ms_400.gif) center center no-repeat
+
+    ul
+      list-style: none
+      margin-left: 0
+
+      li
+        padding: 5px 8px 4px
+
+        span
+          color: #444
+
+        &.user_1
+          background: #e7e7cf
+          border-left: 1px #cfcfaf dotted
+
+        &.user_2
+          background: transparent
+          border-left: 0
+
+        &.user_3
+          background: #f8f8ec
+          border-left: 1px #c3c3ab dotted
+
+  &.audio
+    border-color: #006e9d
+
+    h2 a:hover, p a, li a, .description a
+      color: #006e9d
+
+    .permalink
+      background: #005e86 url(http://data.tumblr.com/Ko3LqKPvh62hfoodY7C51Yic_400.jpg)
+
+      .wrapper
+        background-image: url(http://data.tumblr.com/Ko3LqKPvh62hhconP4BQP28j_400.jpg)
+        background-color: #006e9d
+
+      p a
+        background: transparent url(http://data.tumblr.com/Ko3LqKPvh62hipm1mq0quejr_400.gif) center center no-repeat
+
+    .audio_player
+      margin: 10px auto
+      text-align: center
+
+
+.source
+  margin: 0 80px
+
+
+#disqus_thread #dsq-content h3
+  font-weight: normal !important
+  margin: 10px 0 !important
+
+
+#dsq-content #dsq-auth .dsq-by
+  display: none !important
+
+
+.dsq-comment-header, #dsq-content #dsq-comments .dsq-comment-footer
+  font-family: "GillSans", "Gill Sans", Helvetica !important
+  font-weight: normal !important
+  letter-spacing: 0.14em !important
+  text-transform: uppercase !important
+
+
+a.dsq-brlink
+  font-family: "GillSans", "Gill Sans", Helvetica !important
+  font-weight: normal !important
+  letter-spacing: 0.14em !important
+  text-transform: uppercase !important
+  display: none !important
+  text-align: center !important
+
+
+#dsq-content
+  #dsq-comments
+    .dsq-comment-footer
+      font-size: 10px !important
+
+    .dsq-comment-header cite
+      font-weight: normal !important
+
+    .dsq-header-avatar
+      margin: 0 5px 3px 0 !important
+
+    .dsq-comment-body
+      clear: both !important
+
+  #dsq-options
+    background: #fff !important
+    padding: 10px !important
+
+
+#dsq-extra-links img
+  border: 0 !important
+  padding: 0 4px 0 0 !important
+
+
+#dsq-options a, a#dsq-options-toggle
+  border-bottom: 1px #c8c8ad solid !important
+  color: #bc3d0e !important
+  text-decoration: none !important
+
+
+#dsq-options-toggle a:hover
+  color: #000 !important
+
+
+a.comment_link
+  background: none !important
+  display: none !important
+  text-align: center !important
+  margin-top: 3px !important
+  margin-bottom: 8px !important
+
+
+#index a.comment_link
+  display: block !important
