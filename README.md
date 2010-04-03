@@ -1,4 +1,5 @@
-postal3 Nesta theme
-===============
+#penguinclassics Nesta theme
 
-postal3 is a theme for Nesta, designed by Neil Gardiner of NGStudio.
+Adapted by me for Nesta from [the tumble theme](http://penguinclassics.tumblr.com) by
+[Max Wheeler](http://makenosound.com)
+
