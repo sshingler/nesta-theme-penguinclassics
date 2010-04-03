@@ -1,40 +1,29 @@
-#header
-  %p#logo
-    %a{ :href => "/" }= @heading
-    %small= no_widow @subtitle
-
-#sidebar
-  = haml :categories, :layout => false
-  = haml :feed, :layout => false
-  = haml :about, :layout => false
-
-#content
-  .breadcrumb
-    %a{ :href => "/" } Home
-    &gt;
-    - if @page.parent
-      %a{ :href => @page.parent.abspath }= @page.parent.heading
-      &gt;
-    = @page.heading
-
-  - if @page.date
-    .date= format_date(@page.date)
-  ~ @page.to_html
-
-  .pages
+%div{:class => "post text"}
+  .content
     - @page.pages.each do |page|
       = haml :summary, :layout => false, :locals => { :article => page, :heading => :h3 }
 
-    - unless @page.articles.empty?
-      %h2.articles= "Articles on #{@page.heading}"
-  
-    - @page.articles.each do |article|
-      = haml :summary, :layout => false, :locals => { :article => article, :heading => :h3 }
+    .wrapper
+      .description
+        ~ @page.to_html
+  .permalink
+    .wrapper
+      %p
+        %a{:title => "permalink", :href => @page.abspath}
+          - if @page.date
+            %span= format_date(@page.date)
+            - if @page.categories.empty?
+              %span{:class => "right"}
+                %ul
+                  %li Uncategorised
+            - else
+              %span{:class => "right"}
+                %ul
+                - @page.categories.each do |category|
+                  %li= category.heading
 
-  = haml :social, :layout => false
+  - if @page.date
+    = haml :comments, :layout => false
 
-  - unless @page.categories.empty?
-    .categories
-      Filed under:
-      - @page.categories.each do |category|
-        %a{ :href => category.abspath }= category.heading
+  - @page.articles.each do |article|
+    = haml :summary, :layout => false, :locals => { :article => article, :heading => :h3 }
