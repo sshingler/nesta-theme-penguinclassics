@@ -1,27 +1,29 @@
 %div{:class => "post text"}
   .content
-    .wrapper
-      - @page.pages.each do |page|
-        = haml :summary, :layout => false, :locals => { :article => page, :heading => :h3 }
+    - @page.pages.each do |page|
+      = haml :summary, :layout => false, :locals => { :article => page, :heading => :h3 }
 
-  - unless @page.articles.empty?
-    %h2.articles= "Articles on #{@page.heading}"
+    .wrapper
+      .description
+        ~ @page.to_html
+  .permalink
+    .wrapper
+      %p
+        %a{:title => "permalink", :href => @page.abspath}
+          - if @page.date
+            %span= format_date(@page.date)
+            - if @page.categories.empty?
+              %span{:class => "right"}
+                %ul
+                  %li Uncategorised
+            - else
+              %span{:class => "right"}
+                %ul
+                - @page.categories.each do |category|
+                  %li= category.heading
+
+  - if @page.date
+    = haml :comments, :layout => false
 
   - @page.articles.each do |article|
     = haml :summary, :layout => false, :locals => { :article => article, :heading => :h3 }
-
-%div{:class => "post text"}
-  .content
-    .wrapper
-      ~ @page.to_html
-
-- if @page.date
-  .date= format_date(@page.date)
-
-= haml :social, :layout => false
-
-- unless @page.categories.empty?
-  .categories
-    Filed under:
-    - @page.categories.each do |category|
-      %a{ :href => category.abspath }= category.heading

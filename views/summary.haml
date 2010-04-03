@@ -10,5 +10,18 @@
     - else
       :maruku
         #{article.summary}
-    %p.read_more
-      %a{ :href => article.abspath }= article.read_more
+.permalink
+  .wrapper
+    %p
+      %a{:title => "permalink", :href => article.abspath}
+        - if article.date
+          %span= format_date(article.date)
+        - if article.categories.empty?
+          %span{:class => "right"}
+            %ul
+              %li Uncategorised
+        - else
+          %span{:class => "right"}
+            %ul
+            - article.categories.each do |category|
+              %li= category.heading

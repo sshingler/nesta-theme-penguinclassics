@@ -23,11 +23,11 @@
     = yield
     
     #footer
-      = haml :categories, :layout => false
-      = haml :feed, :layout => false
-      = haml :about, :layout => false
-      
       .wrapper
+        = haml :about, :layout => false
+        = haml :feed, :layout => false
+        = haml :categories, :layout => false
+      
         %p
           Powered by
           %a{ :href => "http://effectif.com/nesta" } nesta
