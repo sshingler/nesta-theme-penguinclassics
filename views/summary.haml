@@ -18,10 +18,9 @@
           %span= format_date(article.date)
         - if article.categories.empty?
           %span{:class => "right"}
-            %ul
-              %li Uncategorised
+            Uncategorised
         - else
           %span{:class => "right"}
-            %ul
             - article.categories.each do |category|
-              %li= category.heading
+              = category.heading
+              %br

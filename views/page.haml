@@ -14,14 +14,12 @@
             %span= format_date(@page.date)
             - if @page.categories.empty?
               %span{:class => "right"}
-                %ul
-                  %li Uncategorised
+                Uncategorised
             - else
               %span{:class => "right"}
-                %ul
                 - @page.categories.each do |category|
-                  %li= category.heading
-
+                  = category.heading
+                  %br
   - if @page.date
     = haml :comments, :layout => false
 
