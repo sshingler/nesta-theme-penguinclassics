@@ -24,4 +24,4 @@
     = haml :comments, :layout => false
 
   - @page.articles.each do |article|
-    = haml :summary, :layout => false, :locals => { :article => article, :heading => :h3 }
+    = haml :summary, :layout => false, :locals => { :article => article, :heading => :h2 }

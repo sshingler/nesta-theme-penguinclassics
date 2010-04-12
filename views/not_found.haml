@@ -1,20 +1,9 @@
-#header
-  %p#logo
-    %a{ :href => "/" }= @heading
-    - if @subtitle
-      %small= no_widow @subtitle
+%div{:class => "post text"}
+  .content
+    .wrapper
 
-#sidebar
-  = haml :categories, :layout => false
-  = haml :feed, :layout => false
-  = haml :about, :layout => false
+      %h1 Page not found
 
-#content
-  .breadcrumb
-    %a{ :href => "/" } Home
-
-  %h1 Page not found
-
-  %p
-    Please try another page or, if you think something is wrong with our site,
-    do get in touch and let us know.
+      %p
+        Please try another page or, if you think something is wrong with our site,
+        do get in touch and let us know.

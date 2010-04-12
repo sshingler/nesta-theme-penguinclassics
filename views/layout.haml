@@ -24,9 +24,10 @@
     
     #footer
       .wrapper
+        = haml :categories, :layout => false
+        %br
         = haml :about, :layout => false
         = haml :feed, :layout => false
-        = haml :categories, :layout => false
       
         %p
           Powered by
